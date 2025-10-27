@@ -39,31 +39,24 @@ const kmPrice = kmNumber * price;
 const discount20 = kmPrice * 0.2;
 const discount40 = kmPrice * 0.4;
 
-
-
-let totalPrice = "";
+let totalPrice = 0;
 let result = "";
-
 
 // SE MINORENNE
 if (ageUtent < 18) {
     totalPrice = kmPrice - discount20;
-
-    result = `Il costo del tuo viaggio è di ${totalPrice} €`;
+    result = `Il costo del tuo viaggio è di ${totalPrice.toFixed(2)} €`;
 }
 
 // SE OVER 65
 else if (ageUtent >= 65) {
     totalPrice = kmPrice - discount40;
-
-    result = `Il costo del tuo viaggio è di ${totalPrice} €`;
+    result = `Il costo del tuo viaggio è di ${totalPrice.toFixed(2)} €`;
 }
 
 // SE TRA 18 E 65 ANNI
-else if (ageUtent >= 18 && ageUtent < 65)
+else if (ageUtent >= 18 && ageUtent < 65) {
+    result = `Il costo del tuo viaggio è di ${kmPrice.toFixed(2)} €`;
+}
 
-    result = `Il costo del tuo viaggio è di ${kmPrice} €`;
-
-
-console.log(result)
-
+console.log(result);
